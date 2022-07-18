@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/schedule.css">
+  <link href='./lib/main.css' rel='stylesheet' />
+  <script src='./lib/main.js'></script>
   <title>排班 | 人員排班系統</title>
 </head>
 
@@ -56,10 +59,17 @@
       排班
     </div>
     <div class="content">
-      <!-- 內容在這邊
-      <a href="#" class="btn">新增會員資料</a>
-      <a href="#" class="btn">查詢會員資料</a>
-      <a href="#" class="btn">新增賀卡</a> -->
+      <div id='calendar'></div>
     </div>
   </div>
 </body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth'
+    });
+    calendar.render();
+  });
+</script>
